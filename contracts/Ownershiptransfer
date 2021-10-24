@@ -4,14 +4,6 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/utils/Address.sol";
 
 contract MyContract {
-    using Address for address payable;
-
-    function doStuff(address payable a, address payable b) public payable {
-        // Do other stuff; beware of reentrancy
-
-        a.sendValue(msg.value/2);
-        b.sendValue(msg.value/2);
-    }
 address onlyOwner;
 function transferOwnership(address _newOwner) public onlyOwner {
   require(msg.sender == owner);
